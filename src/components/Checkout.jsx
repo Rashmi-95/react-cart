@@ -1,6 +1,6 @@
 import React from 'react';
 import productDetails from '../productDetails.js';
-import Product from './Product.jsx';
+import CheckoutProduct from './CheckoutProduct.jsx';
 import { Link } from 'react-router';
 
 export default class Cart extends React.Component {
@@ -15,7 +15,7 @@ export default class Cart extends React.Component {
     let size = 0
     const productsDom = products.map((product, index) => {
       size += product.quantity
-      return <Product key={index} product={product} />
+      return <CheckoutProduct key={index} product={product} />
     })
     return (
       <div>

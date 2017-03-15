@@ -40,20 +40,23 @@
     ul.header {
       margin: 0;
       margin-top: 10px;
+      border: 1px solid #C2C7D0;
+      border-bottom: none;
+      padding: 0;
+      margin-top:50px;
     }
     
     ul.header li {
       display: inline;
       list-style-type: none;
-      margin: 0 10px;
-      font-size: 20px;
+      font-size: 40px;
     }
     
     ul.header li a {
       color: #FFF;
       text-decoration: none;
-      padding: 10px;
       display: inline-block;
+      padding: 5px 90px;
     }
     
     .content {
@@ -64,29 +67,16 @@
     
     .content li {
       margin-bottom: 10px;
+      color: #444 !important;
+      background-color: #fafafa;
+      ;
+      border: 1px solid #C2C7D0;
+      padding: 10px;
     }
     
     .active {
-      color: yellow !important;
-    }
-    
-    .cart {
-      position: absolute;
-      top: 0;
-      right: 0;
-      margin: 20px;
-      background-color: #ffe;
-      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .23), inset 1px 1px 0 0 hsla(0, 0%, 100%, .2);
-      text-align: center;
-      border-radius: 2px;
-      padding: 5px;
-    }
-    
-    .cart img {
-      width: 30px;
-      height: 25px;
-      padding: 0px 5px;
-      vertical-align: middle
+      color: black !important;
+      background-color: white
     }
     
     #head {
@@ -97,18 +87,8 @@
       background-color: #2874f0;
     }
     
-    #filter {
-      float: left;
-      position: relative;
-      width: 290px;
-      height: 800px;
-      background-color: #fff;
-      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .23), inset 1px 1px 0 0 hsla(0, 0%, 100%, .2);
-    }
-    
     #container {
       padding: 5px;
-      padding-top: 120px;
       background-color: #f3f3f3;
     }
     
@@ -117,12 +97,13 @@
       text-align: center;
     }
     
-    .showing,
-    h2 {
-      display: inline-block;
+    .showing {
+      text-align: center;
+      display: block;
       color: black;
       padding: 0 2px;
       margin-bottom: 10px;
+      font-size: 30px;
     }
     
     .product-preview {
@@ -131,12 +112,12 @@
       background-color: #fff;
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .23), inset 1px 1px 0 0 hsla(0, 0%, 100%, .2);
       padding: 10px;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
       border-radius: 5px;
     }
     
     .product-preview img {
-      width: 100px;
+      width: 150px;
       padding-right: 15px;
       position: absolute;
       top: 0;
@@ -145,30 +126,48 @@
     }
     
     .other-details {
-      margin-left: 120px !important;
+      margin-left: 20% !important;
       display: inline-block;
       margin-left: 10px;
-      font-size: 12px;
+      font-size: 14px;
       vertical-align: top;
       margin-top: 10px;
+      text-align: justify;
+      width: 80%;
+    }
+    
+    .buy-product {
+      margin: 30px auto;
+      width: 20%;
+    }
+    
+    .add-to-cart {
+      padding: 10px 8px;
+      text-align: center;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+      border-radius: 5px;
+      font-size: 46px;
+      text-decoration: none;
+      color: black;
+      outline: none;
+      background: #ff9f00;
     }
     
     .other-details .title {
       margin-top: 0px;
-      font-size: 18px;
+      font-size: 30px;
     }
     
-    .item-in-cart span.count {
-      border-radius: 3px;
-      background-color: lightgray;
-      padding: 4px 8px;
-      text-align: center;
+    .price,
+    .quantity {
+      padding-top: 10px;
+      font-size: 34px;
     }
     
-    .price {
-      font-size: 24px;
+    .quantity {
+      margin-top: -10px;
       float: right;
-      margin-top: 10px;
+      color: darkslateblue
     }
     
     .rating {
@@ -179,73 +178,71 @@
       border-radius: 5px;
     }
     
-    .add-to-cart,
-    .buy {
-      padding: 14px 8px;
-      width: 150px;
+    h1.cartname {
+      color: pink;
+      font-family: fantasy;
+      font-size: 60px;
       text-align: center;
-      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
-      border-radius: 2px;
-      border: none;
-      font-size: 14px;
-      outline: none;
-      margin: 5px;
-      font-weight: 500;
+      margin: 0;
     }
     
-    .add-to-cart {
-      background: #ff9f00;
-    }
-    
-    .buy {
-      background: #fb641b;
-    }
-    
-    .overflow-cart {
-      margin-top: 2px;
+    .username {
       position: absolute;
-      top: 40px;
-      right: 3px;
-      background-color: #ffe;
-      width: 500px;
-      opacity: 0;
-      transition: opacity 0.5s ease-in;
+      color: white;
+      top: 10px;
+      right: 10px;
+      font-size: 25px;
     }
     
-    .item-in-cart {
-      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
-      padding: 5px 10px;
+    .logout {
+      position: absolute;
+      right: 0px;
+      font-size: 32px;
+      text-decoration: none;
+      color: white;
+      margin-right: 10px;
+      background-color: black;
+      padding: 5px;
+      margin-right: 0;
+      box-sizing: border-box;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .23), inset 1px 1px 0 0 hsla(0, 0%, 100%, .2);
     }
     
-    .item-in-cart img {
-      width: 2%;
-      float: left;
+    .signin-form {
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #C2C7D0;
+      border-top: none;
     }
     
-    .price-in-cart {
-      float: right
+    .signin-form p {
+      font-size: 50px;
+      padding: 20px;
     }
     
-    .title-in-cart {
-      text-align: left;
+    .signin-form input {
+      font-size: 40px;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px;
+      width: 90%;
     }
     
-    .head-in-cart {
-      background: #4b4c51;
-      color: #fff;
-      padding: 6px 10px;
+    .signin-form button {
+      border-color: dodgerblue;
+      color: black;
+      background: cornflowerblue;
+      display: inline-block;
+      padding: 10px 15px;
+      font-size: 34px;
+      display: block;
+      margin: 0 auto;
     }
-    
-    .head-in-cart span , .remove-item{
-      vertical-align: middle;
-      line-height: 14px;
-      float: right;
-      width: 14px;
-      height: 14px;
+    .img-checkout{
+      height:100px;
+      width:auto;
     }
-     .head-in-cart span:hover, .remove-item:hover {
-       color:lightcoral
-     }
   </style>
 </head>
 
