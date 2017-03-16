@@ -19,6 +19,7 @@ export default class Login extends React.Component {
               }
             )
           }
+          <Link to="/todo" className="add-to-cart make" activeClassName="active">Make a List before shopping?</Link>
         </div>
       </div>
     );

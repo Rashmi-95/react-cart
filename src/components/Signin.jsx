@@ -1,6 +1,6 @@
 import React from 'react'
 import helperFuntion from '../helperFunction.js'
-import { browserHistory } from 'react-router';
+import { browserHistory, Link } from 'react-router';
 
 export default React.createClass({
   propTypes: {

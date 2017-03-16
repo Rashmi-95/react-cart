@@ -7,6 +7,7 @@ import Cart from './components/Cart.jsx';
 import Checkout from './components/Checkout.jsx';
 import Login from './components/Login.jsx';
 import Payment from './components/Payment.jsx';
+import Todo from './components/Todo.jsx';
 
 import { Router, Route, browserHistory } from 'react-router';
 
@@ -17,6 +18,7 @@ ReactDOM.render(
         <Route path="/signin" component={Signin} />
         <Route path="/signup" component={Signup} />
       </Route>
+      <Route path="/todo" component={Todo} />
       <Route path="/cart" component={Cart} />
       <Route path="/checkout" component={Checkout} />
       <Route path="/payment" component={Payment} />
