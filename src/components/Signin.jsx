@@ -1,33 +1,38 @@
 import React from 'react'
+import helperFuntion from '../helperFunction.js'
+import { browserHistory } from 'react-router';
 
 export default React.createClass({
   propTypes: {
     options: React.PropTypes.object,
-    onChange: React.PropTypes.func,
+    updateUser: React.PropTypes.func,
     onSubmit: React.PropTypes.func
   },
-  onChange(e) {
-    console.log('Hello')
-    if (this.props.onChange) {
-      console.log(e.target.value)
-      this.props.onChange(e.target, e.target.value, e)
-    };
-  },
   onSubmit(e) {
-    console.log('Hello')
-    e.preventDefault()
-    if (this.props.onSubmit) {
-      this.props.onSubmit(e)
-    };
+    const email = this.refs.email.value
+    //const passkey = this.refs.passkey.value
+    const password = this.refs.password.value
+    const that = this
+    helperFuntion.signin(email, password)
+      .then(function (data) {
+        if (data !== false) {
+          const name = data.name
+          const email = that.refs.email.value
+          that.props.updateEmail(email, name)
+          browserHistory.push('/cart');
+        } else {
+          that.refs.email.value = ''
+          that.refs.passkey.value = ''
+          that.refs.password.value = ''
+        }
+      })
   },
   render() {
     let options = {
       email: {
-        label: 'Email address',
         placeholder: 'Email'
       },
       password: {
-        label: 'Password',
         placeholder: 'Password'
       },
       submitButton: {
@@ -36,15 +41,18 @@ export default React.createClass({
     }
     options = Object.assign(options, this.props.options || {})
     return <div>
-      <form className="signin-form">
+      <div className="signin-form">
         <div className="form-group">
-          <input type="email" onChange={this.onChange} className="form-control" placeholder={options.email.placeholder} />
+          <input type="email" ref="email" className="form-control" placeholder={options.email.placeholder} />
         </div>
         <div className="form-group">
-          <input type="password" onChange={this.onChange} className="form-control" placeholder={options.password.placeholder} />
+          <input type="password" ref="password" className="form-control" placeholder={options.password.placeholder} />
+        </div>
+        <div className="form-group">
+          <input type="passkey" ref="passkey" className="form-control" placeholder="Cart Identification" />
         </div>
         <button type="submit" onClick={this.onSubmit} className="btn btn-default">{options.submitButton.text}</button>
-      </form>
+      </div>
     </div>
   }
 })
