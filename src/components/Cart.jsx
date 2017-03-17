@@ -77,6 +77,7 @@ export default class Cart extends React.Component {
           <h1 className="cartname">CART</h1>
           <span className="username"> Hi, {this.props.name} </span>
           <Link className="logout" to="/signin" activeClassName="active">Logout</Link>
+          <Link to="/todo" className="add-to-cart make" style={{width:'40%', margin:'0'}} activeClassName="active">View To-buy list</Link>
         </div>
         {container}
       </div>

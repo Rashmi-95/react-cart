@@ -1,4 +1,5 @@
 import React from 'react';
+var Router = require('react-router');
 
 export default class App extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ export default class App extends React.Component {
     this.setState({ email: newEmail, name: newName })
   }
   render() {
+    //Router.browserHistory.push('/signin')
     return (
       <div className="blue full">
         {
